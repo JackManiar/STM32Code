@@ -1,3 +1,14 @@
+//startup function that sets all the pots to the shutdwon state until the first command goes through to begin writing to them
+void MO41050_BootShutdown(){
+    for(uint8_t mux = 0; mux < 12; mux++){
+        for(uint8_t pot = 0; pot < 16; pot++){
+            potSelect(mux, pot); //set selection
+            HAL_Delay(1);   //delay to let mux settle
+            MP41050_Shutdown(&hspi1, GPIOA, GPIO_PIN_0); //shtdown current pot
+        }
+    }
+}
+
 //function that takes in the handle type, port type, pin number, potentiometer select, and value and sets the potentiometer to that value
 //function example:
 //MP41050_Write(&hspi1, GPIOB, GPIO_PIN_6, 128)
