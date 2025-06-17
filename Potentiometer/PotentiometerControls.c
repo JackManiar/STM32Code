@@ -65,6 +65,15 @@ uint8_t resistanceToBit(int res){
 }
 
 //function that puts the pots in shutdown mode when not being used
+//in shutdown mode, the wiper gets shorted to ground, this saves power for when they are not being used
+//to wake up, just call the write functions
 void MP41050_Shutdown(SPI_HandleTypeDef *hspi, GPIO_TypeDef* csPort, uint16_t csPin){
-	
+	uint8_t command = 0b00100001; //command says enter shutdown mode
+	uint8_t data[2] = {command, 0b00000000}; //still need to send don't care bits
+
+	HAL_GPIO_WritePin(csPort, csPin, GPIO_PIN_RESET);
+
+	HAL_SPI_Transmit(hspi, data, 2, HAL_MAX_DELAY);
+
+	HAL_GPIO_WritePin(csPort, csPin, GPIO_PIN_SET);
 }
