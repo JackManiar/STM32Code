@@ -125,24 +125,28 @@ class MuxedPot {
         MuxedPots(SPI_HandleTypeDef spiHandle, GPIO_TypeDef* port, uint16_t pin)
             : hspi(spiHandle), csPort(port), csPin(pin) {}
         
-        void setBit(uint8_t muxInd, uint8_t potInd, uint8_t value){
+        //set resistance uisng 0-255 bit string
+            void setBit(uint8_t muxInd, uint8_t potInd, uint8_t value){
             potSelect(muxInd, potInd);
             HAL_Delay(1);
             writeBit(value);
         }
 
+        //set resistancee suing 0-50000 value
         void setResistance(uint8_t muxInd, uint8_t potInd, int res){
             potSelect(muxInd, potInd);
             HAL_Delay(1);
             writeResistance(value);
         }
         
+        //shutdown specific pot (0 ohm resistance)
         void shutdown(uint8_t muxInd, uint8_t potInd){
             selectPot(muxInd, potInd);
             HAL_Delay(1);
             shutdownIN();
         }
 
+        //shutdown all pots (0ohm resistance)
         void shutdownAll(){
             for(uint8_t mux = 0; mux < 12; mux++){
                 for(uint8_t pot = 0; pot < 16; pot++){
