@@ -126,7 +126,7 @@ class MuxedPot {
             : hspi(spiHandle), csPort(port), csPin(pin) {}
         
         //set resistance uisng 0-255 bit string
-            void setBit(uint8_t muxInd, uint8_t potInd, uint8_t value){
+        void setBit(uint8_t muxInd, uint8_t potInd, uint8_t value){
             potSelect(muxInd, potInd);
             HAL_Delay(1);
             writeBit(value);
@@ -156,4 +156,6 @@ class MuxedPot {
                 }
             }
         }
-        }
+        };
+
+
