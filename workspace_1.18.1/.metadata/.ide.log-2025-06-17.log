@@ -1,0 +1,55 @@
+2025-06-18 00:27:17,781 [INFO] WebApp:194 - Connection lost
+2025-06-18 00:27:18,345 [INFO] WebApp:191 - Connection restablished
+2025-06-18 00:28:26,390 [INFO] WebApp:194 - Connection lost
+2025-06-18 00:28:26,517 [INFO] WebApp:191 - Connection restablished
+2025-06-18 10:06:59,649 [INFO] WebApp:194 - Connection lost
+2025-06-18 10:07:21,713 [INFO] WebApp:191 - Connection restablished
+2025-06-18 10:07:23,090 [INFO] WebApp:194 - Connection lost
+2025-06-18 10:07:23,213 [INFO] WebApp:191 - Connection restablished
+2025-06-18 10:08:53,423 [INFO] WebApp:194 - Connection lost
+2025-06-18 10:08:53,662 [INFO] WebApp:191 - Connection restablished
+2025-06-18 10:36:32,886 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-06-18 10:38:56,705 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 738918456 Bytes (1073741824)
+2025-06-18 10:39:00,845 [INFO] ServerAccessManage:473 - Download File stm32cube_fw_f0_v1110.zip
+2025-06-18 10:39:42,965 [WARN] FileExtend:463 - File entry not found
+2025-06-18 10:39:42,966 [INFO] FileExtend:242 - Unzip File : stm32cube_fw_f0_v1110.zip
+2025-06-18 10:39:42,967 [INFO] FileExtend:257 - Standard Zip Deflate
+2025-06-18 10:40:11,856 [INFO] ServerAccessManage:473 - Download File stm32cube_fw_f0_v1115.zip
+2025-06-18 10:40:15,493 [INFO] FileExtend:242 - Unzip File : stm32cube_fw_f0_v1115.zip
+2025-06-18 10:40:15,493 [INFO] FileExtend:257 - Standard Zip Deflate
+2025-06-18 10:40:30,106 [INFO] LoadServerPackagesThread:196 - End of LoadServerPackages Thread
+2025-06-18 10:40:30,565 [INFO] ThirdPartyModel:298 - Start build external matchings
+2025-06-18 10:40:30,626 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 696033576 Bytes (1073741824)
+2025-06-18 10:40:31,852 [INFO] ThirdPartyModel:316 - End build external matchings
+2025-06-18 10:40:31,892 [INFO] CheckServerUpdateThread:120 - End of CheckServer Thread
+2025-06-18 10:40:32,537 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-06-18 10:40:32,538 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-06-18 10:40:32,539 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-06-18 10:40:32,539 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2025-06-18 10:40:32,542 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-06-18 10:40:32,547 [INFO] CodeGenerator:882 - code generatio: config db path: C:\ST\STM32CubeIDE_1.18.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.1.202504091515\\db\
+2025-06-18 10:40:33,036 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\jackm\STM32CubeIDE\workspace_1.18.1\nucleoTest\MXTmpFiles\license.tmp_save
+2025-06-18 10:40:34,292 [INFO] CodeEngine:287 - Generated code: C:\Users\jackm\STM32CubeIDE\workspace_1.18.1\nucleoTest\MXTmpFiles\license.tmp
+2025-06-18 10:40:34,502 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\jackm\STM32CubeIDE\workspace_1.18.1\nucleoTest\MXTmpFiles\gpio.tmp_save
+2025-06-18 10:40:34,967 [INFO] CodeEngine:287 - Generated code: C:\Users\jackm\STM32CubeIDE\workspace_1.18.1\nucleoTest\MXTmpFiles\gpio.tmp
+2025-06-18 10:40:35,363 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\jackm\STM32CubeIDE\workspace_1.18.1\nucleoTest\Core\Src\stm32f0xx_it.c_save
+2025-06-18 10:40:35,634 [INFO] CodeEngine:287 - Generated code: C:\Users\jackm\STM32CubeIDE\workspace_1.18.1\nucleoTest\Core\Src\stm32f0xx_it.c
+2025-06-18 10:40:35,669 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\jackm\STM32CubeIDE\workspace_1.18.1\nucleoTest\Core\Inc\stm32f0xx_it.h_save
+2025-06-18 10:40:35,829 [INFO] CodeEngine:287 - Generated code: C:\Users\jackm\STM32CubeIDE\workspace_1.18.1\nucleoTest\Core\Inc\stm32f0xx_it.h
+2025-06-18 10:40:35,861 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\jackm\STM32CubeIDE\workspace_1.18.1\nucleoTest\Core\Src\stm32f0xx_hal_msp.c_save
+2025-06-18 10:40:36,150 [INFO] CodeEngine:287 - Generated code: C:\Users\jackm\STM32CubeIDE\workspace_1.18.1\nucleoTest\Core\Src\stm32f0xx_hal_msp.c
+2025-06-18 10:40:36,171 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\jackm\STM32CubeIDE\workspace_1.18.1\nucleoTest\MXTmpFiles\system.tmp_save
+2025-06-18 10:40:36,309 [INFO] CodeEngine:287 - Generated code: C:\Users\jackm\STM32CubeIDE\workspace_1.18.1\nucleoTest\MXTmpFiles\system.tmp
+2025-06-18 10:40:36,353 [INFO] CodeEngine:319 - oldGeneratedFile, C:\Users\jackm\STM32CubeIDE\workspace_1.18.1\nucleoTest\Core\Inc\stm32f0xx_hal_conf.h_save
+2025-06-18 10:40:36,541 [INFO] CodeEngine:343 - Generated code: C:\Users\jackm\STM32CubeIDE\workspace_1.18.1\nucleoTest\Core\Inc\stm32f0xx_hal_conf.h
+2025-06-18 10:40:36,610 [INFO] ApiDbMcu:508 - Load IP Config File for USART2
+2025-06-18 10:40:36,616 [INFO] ApiDbMcu:508 - Load IP Config File for RCC
+2025-06-18 10:40:36,649 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\jackm\STM32CubeIDE\workspace_1.18.1\nucleoTest\Core\Inc\main.h_save
+2025-06-18 10:40:36,848 [INFO] CodeEngine:287 - Generated code: C:\Users\jackm\STM32CubeIDE\workspace_1.18.1\nucleoTest\Core\Inc\main.h
+2025-06-18 10:40:36,870 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\jackm\STM32CubeIDE\workspace_1.18.1\nucleoTest\Core\Src\main.c_save
+2025-06-18 10:40:37,095 [INFO] CodeEngine:287 - Generated code: C:\Users\jackm\STM32CubeIDE\workspace_1.18.1\nucleoTest\Core\Src\main.c
+2025-06-18 10:40:37,619 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 195mS.
+2025-06-18 10:40:37,639 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0.1-B1
+2025-06-18 10:40:37,810 [INFO] ConfigFileManager:1590 - The Die is : DIE440
+2025-06-18 10:40:37,872 [INFO] ApiDbMcu:508 - Load IP Config File for FATFS
+2025-06-18 10:40:37,897 [INFO] ApiDbMcu:508 - Load IP Config File for FREERTOS

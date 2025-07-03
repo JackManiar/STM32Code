@@ -7,7 +7,7 @@
 int main(){
 
     // --- Initialize the CS pin ---
-    MuxedPot pot(&hspi1, GPIOA, GPIO_PIN_0); //initializes the CS pin
+    MuxedPots pot(&hspi1, GPIOA, GPIO_PIN_0); //initializes the CS pin
 
     // --- Demo Use ---
     pot.shutdownAll(); //shutsdown all pots, 0ohms/power-saving mode

@@ -1,0 +1,10 @@
+10:44:56 **** Incremental Build of configuration Debug for project nucleoTest ****
+make -j20 all 
+arm-none-eabi-size  nucleoTest.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7100	     12	   1708	   8820	   2274	nucleoTest.elf
+Finished building: default.size.stdout
+ 
+
+10:44:56 Build Finished. 0 errors, 0 warnings. (took 343ms)
+

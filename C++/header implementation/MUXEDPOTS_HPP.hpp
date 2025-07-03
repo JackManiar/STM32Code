@@ -1,9 +1,18 @@
 #ifndef MUXEDPOTS_HPP
-#define MUZEDPOTS_HPP
+#define MUXEDPOTS_HPP
 
 #include <cstdint>
 #include <iostream>
 #include "stm32f1xx_hal.h"
+
+typedef struct{
+    uint16_t wiperId;
+    uint8_t muxInd;
+    uint8_t potInd;
+} WiperMapEntry;
+
+//using namespace std;
+#define NUM_WIPERS 192
 
 class MuxedPots {
     private:
@@ -11,6 +20,11 @@ class MuxedPots {
         GPIO_TypeDef* csPort;
         uint16_t csPin;
 
+        static const WiperMapEntry wiperMap[NUM_WIPERS]; //list of all the wipers with corresponding indicies
+
+        const WiperMapEntry* lookupWiper(uint16_t wiperId) const;
+
+        
         void potSelect(uint8_t muxInd, uint8_t potInd);
         
         //function that takes in desired potentiometer value and returns the 0-255 value that corresponds for use with the MP41510 function
@@ -30,17 +44,27 @@ class MuxedPots {
 
     public:
         //default constructor
-        MuxedPots(SPI_HandleTypeDef spiHandle, GPIO_TypeDef* port, uint16_t pin);
+        MuxedPots(SPI_HandleTypeDef* spiHandle, GPIO_TypeDef* port, uint16_t pin);
         
         //set resistance uisng 0-255 bit string
+        
         void setBit(uint8_t muxInd, uint8_t potInd, uint8_t value);
+        //overloaded version that accepts wiperId
+        void setBit(uint16_t wiperId, uint8_t value);//unwritten
 
         //set resistancee suing 0-50000 value
         void setResistance(uint8_t muxInd, uint8_t potInd, int res);
+        //overloaded version that accepts wiperId
+        void setResistance(uint16_t wiperId, int res);//unwritten
+
         
         //shutdown specific pot (0 ohm resistance)
         void shutdown(uint8_t muxInd, uint8_t potInd);
+        //overloaded version that accepts wiperId
+        void shutdown(uint8_t wiperId);//unwritten
 
         //shutdown all pots (0ohm resistance)
         void shutdownAll();
-}
+};
+
+#endif
