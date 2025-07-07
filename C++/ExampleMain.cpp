@@ -3,6 +3,7 @@
 //the generated code was left out for readability
 
 #include "MuxedPots.hpp"
+#include "weights.hpp"
 
 int main(){
 
@@ -21,4 +22,6 @@ int main(){
     while(1){
         //main loop
     }
+
+
 }

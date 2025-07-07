@@ -330,6 +330,7 @@ void MuxedPots::setResistance(uint8_t muxInd, uint8_t potInd, int res){
     HAL_Delay(1);
     writeResistance(res);
 }
+
 void MuxedPots::setResistance(uint16_t wiperId, int res){
     const WiperMapEntry* temp = lookupWiper(wiperId);
     if(!temp){
@@ -344,6 +345,7 @@ void MuxedPots::shutdown(uint8_t muxInd, uint8_t potInd){
     HAL_Delay(1);
     shutdownIN();
 }
+
 void MuxedPots::shutdown(uint16_t wiperId){
     const WiperMapEntry* temp = lookupWiper(wiperId);
     if(!temp){

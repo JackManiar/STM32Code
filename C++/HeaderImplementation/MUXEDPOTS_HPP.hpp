@@ -1,9 +1,11 @@
 #ifndef MUXEDPOTS_HPP
 #define MUXEDPOTS_HPP
 
+#include "stm32f1xx_hal.h"
+//#include "stm32l1xx_hal.h" if uisng the nucleo board
+
 #include <cstdint>
 #include <iostream>
-#include "stm32f1xx_hal.h"
 
 typedef struct{
     uint16_t wiperId;
@@ -11,7 +13,7 @@ typedef struct{
     uint8_t potInd;
 } WiperMapEntry;
 
-//using namespace std;
+//using namespace std
 #define NUM_WIPERS 192
 
 class MuxedPots {
@@ -50,18 +52,17 @@ class MuxedPots {
         
         void setBit(uint8_t muxInd, uint8_t potInd, uint8_t value);
         //overloaded version that accepts wiperId
-        void setBit(uint16_t wiperId, uint8_t value);//unwritten
+        void setBit(uint16_t wiperId, uint8_t value);
 
         //set resistancee suing 0-50000 value
         void setResistance(uint8_t muxInd, uint8_t potInd, int res);
         //overloaded version that accepts wiperId
-        void setResistance(uint16_t wiperId, int res);//unwritten
+        void setResistance(uint16_t wiperId, int res);
 
-        
         //shutdown specific pot (0 ohm resistance)
         void shutdown(uint8_t muxInd, uint8_t potInd);
         //overloaded version that accepts wiperId
-        void shutdown(uint8_t wiperId);//unwritten
+        void shutdown(uint16_t wiperId);
 
         //shutdown all pots (0ohm resistance)
         void shutdownAll();
