@@ -1,0 +1,10 @@
+15:22:21 **** Incremental Build of configuration Debug for project ECG_PCB2 ****
+make -j20 all 
+arm-none-eabi-size  ECG_PCB2.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 189688	    712	   7744	 198144	  30600	ECG_PCB2.elf
+Finished building: default.size.stdout
+ 
+
+15:22:21 Build Finished. 0 errors, 0 warnings. (took 384ms)
+

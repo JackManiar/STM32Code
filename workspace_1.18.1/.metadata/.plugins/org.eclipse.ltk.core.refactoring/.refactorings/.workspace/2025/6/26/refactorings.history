@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;earlyTests&apos;" deleteContents="false" description="Delete resource &apos;earlyTests&apos;" element1="/earlyTests" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1750774714021"/>&#x0A;<refactoring comment="Rename resource &apos;Example_Potentiometer_Control_Code&apos; to &apos;Schematic_Configured_Starter_Code&apos;" description="Rename resource &apos;Example_Potentiometer_Control_Code&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Example_Potentiometer_Control_Code" name="Schematic_Configured_Starter_Code" stamp="1750775589599" updateReferences="true"/>
-</session>

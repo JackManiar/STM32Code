@@ -234,6 +234,7 @@ void MuxedPots::potSelect(uint8_t muxInd, uint8_t potInd){
                 ((muxInd & 0x02) ? GPIO_PIN_9 : 0) |
                 ((muxInd & 0x04) ? GPIO_PIN_10 : 0) |
                 ((muxInd & 0x08) ? GPIO_PIN_11 : 0);
+    HAL_Delay(1);
 }
 
 uint8_t MuxedPots::resistanceToBit(int res){
@@ -268,9 +269,11 @@ void MuxedPots::writeBit(uint8_t value) {
 
     //resets cs low to begin data transfer
     HAL_GPIO_WritePin(csPort, csPin, GPIO_PIN_RESET);
-
+    HAL_Delay(1);
+    
     //sends the 16 bit command
     HAL_SPI_Transmit(hspi, data, 2, HAL_MAX_DELAY);
+    HAL_Delay(1);
 
     //sets cs high to end the data transfer
     HAL_GPIO_WritePin(csPort, csPin, GPIO_PIN_SET);
@@ -299,8 +302,10 @@ void MuxedPots::shutdownIN(){
     uint8_t data[2] = {0b00100001, 0b00000000}; //still need to send don't care bits
 
     HAL_GPIO_WritePin(csPort, csPin, GPIO_PIN_RESET);
+    HAL_Delay(1);
 
     HAL_SPI_Transmit(hspi, data, 2, HAL_MAX_DELAY);
+    HAL_Delay(1);
 
     HAL_GPIO_WritePin(csPort, csPin, GPIO_PIN_SET);
     HAL_Delay(1);
@@ -361,6 +366,7 @@ void MuxedPots::shutdownAll(){
             potSelect(mux, pot); //set selection
             HAL_Delay(1);   //delay to let mux settle
             shutdownIN(); //shtdown current pot
+            HAL_Delay(1);
         }
     }
 }

@@ -1,8 +1,8 @@
 #ifndef MUXEDPOTS_HPP
 #define MUXEDPOTS_HPP
 
-#include "stm32f1xx_hal.h"
-//#include "stm32l1xx_hal.h" if uisng the nucleo board
+#include "stm32f0xx_hal.h"
+//#include "stm32l1xx_hal.h" if using the nucleo board
 
 #include <cstdint>
 #include <iostream>
