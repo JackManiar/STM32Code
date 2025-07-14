@@ -219,7 +219,7 @@ void MuxedPots::potSelect(uint8_t muxInd, uint8_t potInd){
     GPIOB->BSRR = (GPIO_PIN_12 | GPIO_PIN_13 | GPIO_PIN_14 | GPIO_PIN_15) << 16;
 
     //set new values for S0-S3
-    GPIOB->BSRR = 
+    GPIOB->BSRR =
                 ((potInd & 0x01) ? GPIO_PIN_12 : 0) |
                 ((potInd & 0x02) ? GPIO_PIN_13 : 0) |
                 ((potInd & 0x04) ? GPIO_PIN_14 : 0) |
@@ -227,14 +227,14 @@ void MuxedPots::potSelect(uint8_t muxInd, uint8_t potInd){
 
     //clear S4-S7 on the GPIOA(PA8-PA11)
     GPIOA->BSRR = (GPIO_PIN_8 | GPIO_PIN_9 | GPIO_PIN_10 | GPIO_PIN_11) << 16;
-    
+
     //set new values for S4-S7
-    GPIOA->BSRR = 
+    GPIOA->BSRR =
                 ((muxInd & 0x01) ? GPIO_PIN_8 : 0) |
                 ((muxInd & 0x02) ? GPIO_PIN_9 : 0) |
                 ((muxInd & 0x04) ? GPIO_PIN_10 : 0) |
                 ((muxInd & 0x08) ? GPIO_PIN_11 : 0);
-    HAL_Delay(1);
+    HAL_Delay(delay);
 }
 
 uint8_t MuxedPots::resistanceToBit(int res){
@@ -269,15 +269,15 @@ void MuxedPots::writeBit(uint8_t value) {
 
     //resets cs low to begin data transfer
     HAL_GPIO_WritePin(csPort, csPin, GPIO_PIN_RESET);
-    HAL_Delay(1);
-    
+    HAL_Delay(delay);
+
     //sends the 16 bit command
     HAL_SPI_Transmit(hspi, data, 2, HAL_MAX_DELAY);
-    HAL_Delay(1);
+    HAL_Delay(delay);
 
     //sets cs high to end the data transfer
     HAL_GPIO_WritePin(csPort, csPin, GPIO_PIN_SET);
-    HAL_Delay(1);
+    HAL_Delay(delay);
 }
 
 void MuxedPots::writeResistance(int res){
@@ -294,7 +294,7 @@ void MuxedPots::writeResistance(int res){
     HAL_SPI_Transmit(hspi, data, 2, HAL_MAX_DELAY);
 
     HAL_GPIO_WritePin(csPort, csPin, GPIO_PIN_SET);
-    HAL_Delay(1);
+    HAL_Delay(delay);
 }
 
 void MuxedPots::shutdownIN(){
@@ -302,13 +302,13 @@ void MuxedPots::shutdownIN(){
     uint8_t data[2] = {0b00100001, 0b00000000}; //still need to send don't care bits
 
     HAL_GPIO_WritePin(csPort, csPin, GPIO_PIN_RESET);
-    HAL_Delay(1);
+    HAL_Delay(delay);
 
     HAL_SPI_Transmit(hspi, data, 2, HAL_MAX_DELAY);
-    HAL_Delay(1);
+    HAL_Delay(delay);
 
     HAL_GPIO_WritePin(csPort, csPin, GPIO_PIN_SET);
-    HAL_Delay(1);
+    HAL_Delay(delay);
 }
 
 //begin public methods
@@ -317,7 +317,7 @@ MuxedPots::MuxedPots(SPI_HandleTypeDef* spiHandle, GPIO_TypeDef* port, uint16_t 
 
 void MuxedPots::setBit(uint8_t muxInd, uint8_t potInd, uint8_t value){
     potSelect(muxInd, potInd);
-    HAL_Delay(1);
+    HAL_Delay(delay);
     writeBit(value);
 }
 
@@ -332,7 +332,7 @@ void MuxedPots::setBit(uint16_t wiperId, uint8_t value){
 
 void MuxedPots::setResistance(uint8_t muxInd, uint8_t potInd, int res){
     potSelect(muxInd, potInd);
-    HAL_Delay(1);
+    HAL_Delay(delay);
     writeResistance(res);
 }
 
@@ -347,7 +347,7 @@ void MuxedPots::setResistance(uint16_t wiperId, int res){
 
 void MuxedPots::shutdown(uint8_t muxInd, uint8_t potInd){
     potSelect(muxInd, potInd);
-    HAL_Delay(1);
+    HAL_Delay(delay);
     shutdownIN();
 }
 
@@ -364,9 +364,9 @@ void MuxedPots::shutdownAll(){
     for(uint8_t mux = 0; mux < 12; mux++){
         for(uint8_t pot = 0; pot < 16; pot++){
             potSelect(mux, pot); //set selection
-            HAL_Delay(1);   //delay to let mux settle
+            HAL_Delay(delay);   //delay to let mux settle
             shutdownIN(); //shtdown current pot
-            HAL_Delay(1);
+            HAL_Delay(delay);
         }
     }
 }
