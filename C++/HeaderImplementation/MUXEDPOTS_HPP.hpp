@@ -15,6 +15,7 @@ typedef struct{
 
 //using namespace std
 #define NUM_WIPERS 192
+#define delay 20
 
 class MuxedPots {
     private:
